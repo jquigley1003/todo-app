@@ -1,10 +1,11 @@
 require 'spec_helper'
 
 describe Task do
-  before { @task = Task.new(title: "Walk the dog", completed: true) }
+  before { @task = Task.new(title: "Walk the dog", completed: true, priority: 1) }
 
   subject { @task }
 
+  it { should respond_to(:priority) }
   it { should respond_to(:completed) }
   it { should respond_to(:title) }
   it { should be_valid }
@@ -32,6 +33,11 @@ describe Task do
         new_task = Task.new(title: "Walk the dog")
         expect(new_task.completed).to be_falsey
       end
+    end
+
+    describe "priority" do
+        before { @task.priority == 1 }
+        it { should be_valid }
     end
   end
 end
