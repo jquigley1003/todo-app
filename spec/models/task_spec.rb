@@ -36,8 +36,20 @@ describe Task do
     end
 
     describe "priority" do
-        before { @task.priority == 1 }
+      describe "equals certain value" do
+        before { @task.priority = 1 }
         it { should be_valid }
+      end
+
+      describe "too high" do
+        before { @task.priority = 15}
+        it { should_not be_valid }
+      end
+
+      describe "too low" do
+        before { @task.priority = -1}
+        it { should_not be_valid }
+      end
     end
   end
 end
