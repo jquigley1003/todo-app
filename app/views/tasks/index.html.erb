@@ -1,5 +1,22 @@
-<title>Todo | All Tasks</title>
+<title>Todo | My Tasks</title>
+<% provide(:title, "My Tasks") %>
 
 <h1>All Tasks</h1>
 
-<p><%= @tasks.title %></p>
+<table class="table table-striped table-hover table-bordered">
+    <tr>
+      <th>Todo</th>
+      <th colspan="3"></th>
+    </tr>
+
+    <% @tasks.each do | task | %>
+
+      <tr>    
+        <td><%= task.title %></td>
+        <td><%= link_to 'Show', task_path(task), class:"btn btn-default" %></td>
+        <td><%= link_to 'Edit', edit_task_path(task), class:"btn btn-default" %></td>
+        <td><%= link_to 'Delete', task_path(task),  
+                      method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-default" %></td 
+    </tr>
+  <% end %>
+</table>

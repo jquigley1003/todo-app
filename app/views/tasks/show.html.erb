@@ -1,5 +1,12 @@
-<title>Todo | Show Task</title>
+<!-- <title>Todo | Show Task</title> -->
+<% provide(:title, "Todo | Show Task") %>
 
 <h1>I need to...</h1>
 
-<p><%= @task.title %></p>
+<p>TITLE: <%= @task.title %></p>
+
+<p>COMPLETED: <%= @task.completed %></p>
+
+<p>PRIORITY: <%= @task.priority %></p>
+
+<button type="button">Edit?</button>

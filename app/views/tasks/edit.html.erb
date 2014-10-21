@@ -1,7 +1,9 @@
-<title>Todo | Edit Task</title>
+<!-- <title>Todo | Edit Task</title> -->
+<% provide(:title, "Edit Task") %>
 
-<h1>You need to:</h1>
+<h1>Edit Task</h1>
 
-<p><%= @task.title %></p>
+<p><%= render 'form' %></p>
 
-<button type="button">Edit?</button>
+<a href="/show"><button>Save Changes</button></a>
+

@@ -1,0 +1,25 @@
+<%= form_for(@task) do |form| %>
+<%= render 'shared/error_messages', object: form.object %>
+  <div>
+    <%= form.label :title %><br />
+    <%= form.text_field :title %>
+  </div>
+  <br />
+
+  <div>
+    <%= form.label :completed %>
+    <%= form.check_box :completed %>
+  </div>
+  <br />
+
+  <div>
+    <%= form.label :priority %>
+    <%= form.number_field :priority %>
+  </div>
+  <br />
+
+  <div>
+    <%= form.submit 'Save' %>
+  </div>
+
+  <% end %>
